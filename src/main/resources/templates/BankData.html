@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Bank</title>
+</head>
+<body>
+	<h3>Welcome to Bank Data Page</h3>
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>BANK NAME</th>
+			<th>Bank BOOK</th>
+			<th>Operations</th>
+
+		</tr>
+		<tr th:each="ob:${list}">
+			<td th:text="${ob.id}"></td>
+			<td th:text="${ob.bankName}"></td>
+			<td th:text="${ob.bankPassbook}"></td>
+			<td><a th:href="@{/bankk/delete/{id}(id=${ob.id})}">Delete </a></td>
+			<td><a th:href="@{/bankk/edit/{id}(id=${ob.id})}">edit</a></td>
+		</tr>
+
+	</table>
+</body>
+</html>

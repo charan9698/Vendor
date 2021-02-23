@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Hotel data</title>
+</head>
+<body>
+	<h2>Your seeing Hotel Data</h2>
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>HOTELNAME</th>
+			<th>HOTELAREA</th>
+			<th>COMMENTS</th>
+			<th>OPERATIONS</th>
+		</tr>
+		<tr th:each="ob:${list}">
+		<td th:text="${ob.id}"></td>
+			<td th:text="${ob.hotelName}"></td>
+			<td th:text="${ob.hotelArea}"></td>
+			<td th:text="${ob.comment}"></td>
+			<td><a th:href="@{/hotel/delete/{id}(id=${ob.id})}">Delete</a></td>
+		</tr>
+	</table>
+</body>
+</html>

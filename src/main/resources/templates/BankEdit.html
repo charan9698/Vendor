@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" >
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		<div class="card">
+			<div class="card-header bg-success text-orange" align="center" >
+				<h2>Welcome to Bank Register Page</h2>
+			</div>
+			<div class="card-body">
+				<form th:action="@{/bankk/update}" method="POST" th:object="${bank}">
+				<!-- row-1.1 -->
+					<div class="row">
+						<div class="col-4">
+							<label>Bank Id</label>
+						</div>
+						<div class="col-4">
+							<input type="text" th:field="*{id}" class="form-control" readonly="readonly" />
+						</div>
+						<div class="col-4">
+							<span id="idError"></span>
+						</div>
+					</div>
+					<!-- row-1 -->
+					<div class="row">
+						<div class="col-4">
+							<label>Bank Name</label>
+						</div>
+						<div class="col-4">
+							<input type="text" th:field="*{bankName}" class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="bankNameError"></span>
+						</div>
+					</div>
+					<!-- row-2 -->
+					<div class="row">
+						<div class="col-4">
+							<label>BankPassbook</label>
+						</div>
+						<div class="col-4">
+							<input type="text" th:field="*{bankPassbook}"
+								class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="bankPassbookerror"></span>
+						</div>
+					</div>
+					<input type="Submit" value="update" class="btn-primary">
+				</form>
+			</div>
+			<div class="card-footer bg-danger text-red"></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Hotel</title>
+</head>
+<body>
+	<h1>Welcome to Hotel register page</h1>
+	<form th:action="@{/hotel/save}" method="POST" th:object="${hotel}">
+		HotelName:<input type="text" th:field="*{hotelName}" />. 
+		HotelArea:<input type="text" th:field="*{hotelArea}" />. 
+		Comment:<textarea th:field="*{comment}"></textarea>
+		<input type="submit" value="Register">
+
+	</form>
+
+</body>
+</html>
